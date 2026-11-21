@@ -1,6 +1,19 @@
-# Data Dictionary — Mock Windows Security Events
+# Data Dictionary
 
-## File
+## Telemetry sources
+
+This project uses the following telemetry sources:
+
+| Source | File | Event format | Primary use |
+|---|---|---|---|
+| Mock Windows Security events | `data/mock_windows_security_events.csv` | CSV | Baseline authentication detection testing |
+| Windows Security event log | `data/raw/kerberos_pwd_spray_4771.evtx` | Windows EVTX | Kerberos pre-authentication failure and password-spraying analysis |
+| Windows Security event log | `data/raw/security_log_cleared_1102.evtx` | Windows EVTX | Security log-clearing detection validation |
+| Sysmon event log | `data/raw/sysmon_zipexec.evtx` | Windows EVTX | JScript execution, ZIP creation, and process-parent analysis |
+
+## Mock Windows Security events
+
+### File
 
 `data/mock_windows_security_events.csv`
 

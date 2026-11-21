@@ -28,9 +28,13 @@ def test_coverage_matrix_has_expected_columns():
 def test_every_supporting_rule_id_has_a_sigma_rule():
     df = pd.read_csv(MATRIX_PATH)
 
-    for rule_id in df["supporting_rule_id"]:
-        matching_files = list(RULES_PATH.glob("*.yml"))
+    for _, row in df.iterrows():
+        rule_id = row["supporting_rule_id"]
 
+        if row["coverage_status"] == "Not Covered" or pd.isna(rule_id):
+            continue
+
+        matching_files = list(RULES_PATH.glob("*.yml"))
         found = False
 
         for rule_file in matching_files:

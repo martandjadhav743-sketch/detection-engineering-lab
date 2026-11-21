@@ -7,3 +7,23 @@ Privilege Escalation,T1078,Valid Accounts,Partially Covered,9c1f4a7b-2e65-4d38-8
 Initial Access,T1078,Valid Accounts,Covered,b2e8d6f4-73a1-4c29-8e57-1a9c4f6d8b32,Successful logon from an unfamiliar source IP
 Initial Access,T1078,Valid Accounts,Covered,d6f3a8c2-47b1-4e59-8c26-9b7e3f1a5d84,Successful logon from an unknown workstation
 Defense Evasion,T1070.001,Clear Windows Event Logs,Covered,f4c8b2e9-63d7-4a15-8e92-7b1d5c4a6f83,Validated against real EVTX telemetry containing Event ID 1102
+Execution,T1059.007,JavaScript/JScript,Covered,7f2a91c4-8b63-4f27-9d61-2c8e4a7b5f31,Validated against real EVTX telemetry: cscript.exe executed JScript using the //e:jscript argument
+Command and Control,T1105,Ingress Tool Transfer,Covered,7f2a91c4-8b63-4f27-9d61-2c8e4a7b5f31,Validated against real EVTX telemetry: cscript.exe created a ZIP archive in the user Temp directory and cmdkey.exe used the Windows Shell ZipFolder protocol
+Execution,T1059.001,PowerShell,Covered,8f2a7c31-4b6e-4d18-9c7f-2b1d6e9a4c55,Detects PowerShell download cmdlets and inline execution indicators
+Command and Control,T1105,Ingress Tool Transfer,Covered,8f2a7c31-4b6e-4d18-9c7f-2b1d6e9a4c55,Detects PowerShell-based download activity
+Persistence,T1053.005,Scheduled Task,Covered,5c1e8d24-7a93-4f61-bc82-3d9f7a1e6b44,Detects scheduled task creation using schtasks.exe
+Execution,T1059.003,Windows Command Shell,Covered,5c1e8d24-7a93-4f61-bc82-3d9f7a1e6b44,Detects command-line scheduled task creation
+Execution,T1059,Command and Scripting Interpreter,Covered,9d4b2e67-1c58-4a92-bf73-6e8a2c1d9f30,Detects multiple process executions from user Temp directories
+Defense Evasion,T1027,Obfuscated Files or Information,Covered,9d4b2e67-1c58-4a92-bf73-6e8a2c1d9f30,Detects suspicious execution from Temp directories that may contain staged or obfuscated payloads
+Credential Access,T1003.001,LSASS Memory,Covered,3a7d9c15-8e42-4b76-9d18-5f2c7a4e1b93,Detects suspicious process access to LSASS
+Defense Evasion,T1218.011,Rundll32,Covered,6b2e4f18-9c73-4d25-a861-7e3c9b5d2f64,Detects suspicious rundll32 execution involving JavaScript or URL functionality
+Lateral Movement,T1021.001,Remote Desktop Protocol,Covered,1d8f5a29-4c67-4b38-9e72-6a1d8c3f5b47,Detects successful Remote Desktop Protocol logons
+Persistence,T1136.001,Create Account: Local Account,Covered,4e9c7b32-1a58-4d63-8f27-9b4e2c6d8a15,Detects local account creation
+Persistence,T1098,Account Manipulation,Covered,4e9c7b32-1a58-4d63-8f27-9b4e2c6d8a15,Detects local account creation that may support persistence or unauthorized access
+Persistence,T1547.001,Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder,Covered,2f6a8d41-7c93-4b25-9e18-6d4b1a7c3e52,Detects creation or modification of common Registry Run keys
+Execution,T1047,WMI,Covered,7c3e9b25-4d18-4a67-8f92-1e6a5c8d3b74,Detects WMI-based process execution
+Execution,T1204.002,User Execution: Malicious File,Covered,8d1b4c72-5e39-4f86-9a27-3c7e2b9d4f61,Detects execution of executable files from user Downloads directories
+Defense Evasion,T1562.001,Impair Defenses: Disable or Modify Tools,Covered,5a9e2c18-3b74-4d62-8f15-7c4d9e1b6a83,Detects attempts to add Microsoft Defender exclusions
+Impact,T1486,Data Encrypted for Impact,Not Covered,,"No detection rule currently identifies ransomware-related file encryption or ransom-note creation activity"
+Exfiltration,T1567.002,Exfiltration to Cloud Storage,Not Covered,,"No detection rule currently identifies data uploads to cloud-storage services or suspicious cloud-storage command-line activity"
+Credential Access,T1555,Credentials from Password Stores,Not Covered,,"No detection rule currently identifies access to browser password stores, credential managers, or password vaults"
