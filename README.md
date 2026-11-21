@@ -54,3 +54,44 @@ pip install -r requirements.txt
 ## Status
 
 See `PROGRESS.md` for the current project status.
+
+## How to run
+
+1. Open Command Prompt or PowerShell.
+2. Go to the project folder:
+
+```powershell
+cd C:\Users\marta\Desktop\detection-engineering-lab
+```
+
+3. Activate the virtual environment:
+
+```powershell
+.venv\Scripts\activate
+```
+
+4. Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+5. Run the mock log analysis:
+
+```powershell
+python src\log_analysis.py
+```
+
+6. Run the automated tests:
+
+```powershell
+pytest
+```
+
+## Current analysis features
+
+- Loads mock Windows Security-style authentication events
+- Counts events by type
+- Counts failed logons by source IP
+- Identifies source IPs with repeated failed logons
+- Provides automated tests for the analysis functions
