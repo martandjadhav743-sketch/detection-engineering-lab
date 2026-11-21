@@ -1,0 +1,28 @@
+title: Repeated Kerberos Pre-Authentication Failures from Single Source
+id: 6f2a1c47-8b93-4f4d-9d24-56b7f1a9c3d8
+status: experimental
+description: >
+    Detects repeated Kerberos pre-authentication failures from the same
+    source IP address. This can indicate an attempt to guess or spray
+    credentials against user accounts.
+references:
+    - https://attack.mitre.org/techniques/T1110/003/
+    - EVTX-ATTACK-SAMPLES Credential Access/kerberos_pwd_spray_4771.evtx
+author: Detection Engineering and Threat Intelligence Office
+date: 2026/11/21
+tags:
+    - attack.credential_access
+    - attack.t1110.003
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4771
+        Status: '0x00000018'
+    condition: selection | count(IpAddress) by IpAddress >= 2
+falsepositives:
+    - A user repeatedly entering an incorrect password
+    - A service using an expired or changed password
+    - A misconfigured application repeatedly attempting authentication
+level: medium

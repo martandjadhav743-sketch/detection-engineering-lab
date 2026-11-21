@@ -1,0 +1,3 @@
+2026-11-20T10:00:00.000Z WARNING service_control_manager Service installed event_id=7045 service_name=UpdateHelper image_path=C:\Temp\update_helper.exe
+2026-11-20T10:05:00.000Z WARNING service_control_manager Service installed event_id=7045 service_name=SystemTask image_path=C:\Users\Public\system_task.exe
+2026-11-20T10:10:00.000Z INFO service_control_manager Service installed event_id=7045 service_name=LegitimateService image_path=C:\Program Files\LegitimateService\service.exe

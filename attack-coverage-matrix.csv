@@ -1,0 +1,9 @@
+tactic,technique_id,technique_name,coverage_status,supporting_rule_id,notes
+Credential Access,T1110,Brute Force,Covered,7f3a2c1e-8b64-4f7a-9d21-6b8f5a1c4e92,Repeated failed logons from the same source IP
+Credential Access,T1110.003,Password Spraying,Covered,a1b9e4c7-52d8-4b36-9f24-7e6c8d3a5b91,Validated against real EVTX telemetry: 7 accounts targeted from one source IP using Event ID 4768
+Credential Access,T1110.003,Password Spraying,Covered,6f2a1c47-8b93-4f4d-9d24-56b7f1a9c3d8,Validated against real EVTX telemetry: 2 Kerberos pre-authentication failures from one source IP using Event ID 4771
+Defense Evasion,T1078,Valid Accounts,Partially Covered,9c1f4a7b-2e65-4d38-8b19-7f4a6d2e3c58,Privileged logon detection exists but does not identify account misuse by itself
+Privilege Escalation,T1078,Valid Accounts,Partially Covered,9c1f4a7b-2e65-4d38-8b19-7f4a6d2e3c58,Privileged logon detection exists but does not identify account misuse by itself
+Initial Access,T1078,Valid Accounts,Covered,b2e8d6f4-73a1-4c29-8e57-1a9c4f6d8b32,Successful logon from an unfamiliar source IP
+Initial Access,T1078,Valid Accounts,Covered,d6f3a8c2-47b1-4e59-8c26-9b7e3f1a5d84,Successful logon from an unknown workstation
+Defense Evasion,T1070.001,Clear Windows Event Logs,Covered,f4c8b2e9-63d7-4a15-8e92-7b1d5c4a6f83,Validated against real EVTX telemetry containing Event ID 1102

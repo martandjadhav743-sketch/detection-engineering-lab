@@ -1,0 +1,29 @@
+title: Suspicious Service Installation
+id: e8a2c7d4-91b6-4f38-8d57-2c6a9f4b1e73
+status: experimental
+description: >
+  Detects service installation events where the service binary path contains
+  suspicious locations or executable names commonly associated with malicious
+  activity.
+references:
+  - https://attack.mitre.org/techniques/T1543/003/
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1543.003
+logsource:
+  product: windows
+  service: system
+detection:
+  selection:
+    event_id: 7045
+  suspicious_path:
+    image_path|contains:
+      - "C:\\Temp\\"
+      - "C:\\Users\\Public\\"
+      - "AppData\\Local\\Temp\\"
+  condition: selection and suspicious_path
+falsepositives:
+  - Authorized software installers that use temporary directories
+  - Development or testing tools
+level: high

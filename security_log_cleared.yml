@@ -1,0 +1,25 @@
+title: Windows Security Log Cleared
+id: f4c8b2e9-63d7-4a15-8e92-7b1d5c4a6f83
+status: experimental
+description: >
+  Detects when the Windows Security event log is cleared. This activity can
+  indicate an attempt to remove evidence of malicious activity, although it
+  may also occur during authorized maintenance.
+references:
+  - https://attack.mitre.org/techniques/T1070/001/
+  - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
+tags:
+  - attack.defense_evasion
+  - attack.t1070.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+  - Authorized log rotation or maintenance
+  - Administrators clearing logs during approved incident response
+  - System cleanup activities
+level: high

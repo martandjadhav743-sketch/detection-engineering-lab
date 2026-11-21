@@ -1,0 +1,27 @@
+title: Successful Logon from Unfamiliar Source IP
+id: b2e8d6f4-73a1-4c29-8e57-1a9c4f6d8b32
+status: experimental
+description: >
+  Detects successful logon events from source IP addresses outside the simulated
+  internal network range. This may indicate remote access, VPN use, or an unexpected
+  authentication source.
+references:
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.initial_access
+  - attack.t1078
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    event_id: 4624
+    source_ip|startswith:
+      - "203."
+      - "198."
+  condition: selection
+falsepositives:
+  - Authorized remote workers using a VPN
+  - Approved third-party support access
+  - Legitimate cloud service authentication
+level: high

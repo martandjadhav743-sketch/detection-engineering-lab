@@ -1,0 +1,24 @@
+title: Special Privileges Assigned to New Logon
+id: 9c1f4a7b-2e65-4d38-8b19-7f4a6d2e3c58
+status: experimental
+description: >
+  Detects when special privileges are assigned to a new logon session. This can help
+  identify use of privileged accounts and should be reviewed for unexpected activity.
+references:
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.defense_evasion
+  - attack.privilege_escalation
+  - attack.t1078
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    event_id: 4672
+  condition: selection
+falsepositives:
+  - Normal use of an administrator account
+  - Scheduled administrative maintenance
+  - Authorized IT support activity
+level: medium

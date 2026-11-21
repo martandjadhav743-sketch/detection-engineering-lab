@@ -1,0 +1,25 @@
+title: Successful Logon from Unknown Workstation
+id: d6f3a8c2-47b1-4e59-8c26-9b7e3f1a5d84
+status: experimental
+description: >
+  Detects successful logon events where the source workstation is recorded as
+  UNKNOWN. This may indicate remote access, an unmanaged device, or incomplete
+  telemetry.
+references:
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.initial_access
+  - attack.t1078
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    event_id: 4624
+    source_workstation: UNKNOWN
+  condition: selection
+falsepositives:
+  - Remote access through a VPN or proxy
+  - Legacy systems that do not populate workstation names
+  - Authorized third-party access
+level: medium
