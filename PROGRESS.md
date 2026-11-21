@@ -118,6 +118,36 @@ Phase 3: Log analysis utilities
 9 passed
 ```
 
+## Phase 4: Sigma rule library — IN PROGRESS
+
+
+### Completed
+
+
+- Created Sigma-style rules for repeated failed logons, password spraying, privileged logons, unfamiliar-source successful logons, unknown-workstation logons, and suspicious service installations
+- Created `docs/attack-coverage-matrix.csv`
+- Added automated tests for Sigma rule structure, IDs, ATT&CK tags, severity, and detection logic
+- Added Python detection functions and tests for:
+  - Repeated failed logons
+  - Password spraying
+  - Unfamiliar-source successful logons
+  - Unknown-workstation logons
+  - Suspicious service installations
+- Created mock logs for unknown-workstation logons and suspicious service installations
+- Added `pytest.ini` with `pythonpath = .` and `testpaths = tests`
+- Reached 49 passing automated tests
+
+
+### Important scope note
+
+
+The rules and detection logic developed in Phase 4 were validated against locally created mock telemetry.
+
+
+This work is useful for learning detection engineering and building a repeatable local validation workflow, but it does not yet satisfy the PRD requirement to test rules against real, publicly available security telemetry.
+
+
 ## Next phase
 
-Phase 4: Sigma rule library
+
+Phase 5: Real telemetry onboarding and PRD alignment
