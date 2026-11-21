@@ -1,0 +1,14 @@
+timestamp,computer,event_id,event_name,account_name,account_domain,logon_type,source_ip,source_workstation,status,result
+2026-11-21T09:00:12,DC01,4624,Successful Logon,jsmith,CORP,2,192.168.1.25,WS01,0x0,Success
+2026-11-21T09:02:41,WS01,4624,Successful Logon,jsmith,CORP,2,192.168.1.25,WS01,0x0,Success
+2026-11-21T09:05:18,DC01,4625,Failed Logon,jsmith,CORP,3,203.0.113.45,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:05:31,DC01,4625,Failed Logon,jsmith,CORP,3,203.0.113.45,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:05:44,DC01,4625,Failed Logon,jsmith,CORP,3,203.0.113.45,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:06:02,DC01,4625,Failed Logon,jsmith,CORP,3,203.0.113.45,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:06:15,DC01,4625,Failed Logon,jsmith,CORP,3,203.0.113.45,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:06:30,DC01,4740,Account Locked Out,jsmith,CORP,N/A,203.0.113.45,UNKNOWN,0x0,Success
+2026-11-21T09:12:08,WS02,4624,Successful Logon,asmith,CORP,2,192.168.1.31,WS02,0x0,Success
+2026-11-21T09:15:27,WS02,4672,Special Privileges Assigned,asmith,CORP,N/A,192.168.1.31,WS02,0x0,Success
+2026-11-21T09:20:44,DC01,4625,Failed Logon,brown,CORP,3,198.51.100.22,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:21:01,DC01,4625,Failed Logon,brown,CORP,3,198.51.100.22,UNKNOWN,0xC000006A,Failure
+2026-11-21T09:22:15,DC01,4624,Successful Logon,brown,CORP,3,198.51.100.22,UNKNOWN,0x0,Success
